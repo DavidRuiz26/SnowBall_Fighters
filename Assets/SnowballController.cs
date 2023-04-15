@@ -57,5 +57,10 @@ public class SnowballController : MonoBehaviour
             transform.SetParent(null);
             isHolding = false;
         }
+
+        if (other.CompareTag("Enemy"))
+        {
+            other.gameObject.SetActive(false);
+        }
     }
 }
