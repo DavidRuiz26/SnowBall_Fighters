@@ -62,13 +62,11 @@ namespace Valve.VR.InteractionSystem
         [HideInInspector]
         public Interactable interactable;
 
-
         //-------------------------------------------------
         protected virtual void Awake()
         {
             velocityEstimator = GetComponent<VelocityEstimator>();
             interactable = GetComponent<Interactable>();
-
 
 
             rigidbody = GetComponent<Rigidbody>();
