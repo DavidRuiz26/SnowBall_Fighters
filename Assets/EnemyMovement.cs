@@ -28,6 +28,7 @@ public class EnemyMovement : MonoBehaviour
         {
             direction *= -1f;
             newPosition = transform.position + new Vector3(speed * direction * Time.deltaTime, 0, 0);
+            transform.rotation = Quaternion.FromToRotation(transform.rotation.eulerAngles, new Vector3(0, transform.rotation.y + 180));
             transform.localScale = new Vector3(direction, 1f, 1f); // Voltea el modelo
         }
 
