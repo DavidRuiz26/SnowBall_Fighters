@@ -62,13 +62,11 @@ namespace Valve.VR.InteractionSystem
         [HideInInspector]
         public Interactable interactable;
 
-
         //-------------------------------------------------
         protected virtual void Awake()
         {
             velocityEstimator = GetComponent<VelocityEstimator>();
             interactable = GetComponent<Interactable>();
-
 
 
             rigidbody = GetComponent<Rigidbody>();
@@ -80,7 +78,6 @@ namespace Valve.VR.InteractionSystem
                 // remove?
                 //interactable.handFollowTransform = attachmentOffset;
             }
-
         }
 
 
@@ -155,7 +152,6 @@ namespace Valve.VR.InteractionSystem
             attachTime = Time.time;
             attachPosition = transform.position;
             attachRotation = transform.rotation;
-
         }
 
 
@@ -231,8 +227,6 @@ namespace Valve.VR.InteractionSystem
         //-------------------------------------------------
         protected virtual void HandAttachedUpdate(Hand hand)
         {
-
-
             if (hand.IsGrabEnding(this.gameObject))
             {
                 hand.DetachObject(gameObject, restoreOriginalParent);
