@@ -8,13 +8,15 @@ public class EnemyMovement : MonoBehaviour
     public float speed = 0.75f; // Velocidad del movimiento
     public float distance = 5f; // Distancia máxima que el objeto se moverá de su posición inicial
 
+    private Quaternion targetRotation;
     private Vector3 startPosition; // Posición inicial del objeto
-    private float direction = 1f; // Dirección del movimiento, 1 es derecha, -1 es izquierda
+    private Vector3 finishPosition; //Finish position of the object
 
     // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position; // Guarda la posición inicial del objeto
+        finishPosition = new Vector3(startPosition.x+5, startPosition.y, startPosition.z);
     }
 
     // Update is called once per frame
@@ -23,15 +25,13 @@ public class EnemyMovement : MonoBehaviour
         // Calcula la nueva posición del objeto
         Vector3 newPosition = startPosition + new Vector3(Mathf.Sin(Time.time * speed), 0, 0) * distance;
 
-        // Si el objeto llega al límite de su movimiento, cambia de dirección
-        if (Mathf.Abs(newPosition.x - startPosition.x) > distance)
-        {
-            direction *= -1f;
-            newPosition = transform.position + new Vector3(speed * direction * Time.deltaTime, 0, 0);
-            transform.localScale = new Vector3(direction, 1f, 1f); // Voltea el modelo
+        if(newPosition == finishPosition){
+            targetRotation = Quaternion.Euler(0, 180, 0); // Gira 180 grados en el eje Y
+            transform.rotation = targetRotation; // Aplica la rotación al objeto
         }
 
         // Asigna la nueva posición al objeto
         transform.position = newPosition;
     }
+
 }
