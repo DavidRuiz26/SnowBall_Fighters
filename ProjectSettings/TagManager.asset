@@ -8,6 +8,8 @@ TagManager:
   - projectile
   - FxTemporaire
   - Hand
+  - Ball
+  - Score
   layers:
   - Default
   - TransparentFX
