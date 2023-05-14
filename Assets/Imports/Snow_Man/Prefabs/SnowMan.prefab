@@ -178,6 +178,8 @@ GameObject:
   - component: {fileID: 4476336109076507166}
   - component: {fileID: 6864905916892649541}
   - component: {fileID: 6605290170504855850}
+  - component: {fileID: -5220818610717282623}
+  - component: {fileID: -8979007632036659933}
   m_Layer: 0
   m_Name: SnowMan
   m_TagString: Untagged
@@ -247,6 +249,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6792c04fa35f99642ad79c026fdfa4e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-5220818610717282623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3665448684949034829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5156689f0dc6f48a615bde64ef55ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+--- !u!114 &-8979007632036659933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3665448684949034829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0006e58a84650f34bbdd77e073548645, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 7218715470093280658, guid: 5832e831d161d324cbde9ab98920d4c7, type: 3}
+  timer: 3
+  maxCounter: 20
 --- !u!1 &4061901886764215230
 GameObject:
   m_ObjectHideFlags: 0
