@@ -29,6 +29,20 @@ public class Bullet_Movement : MonoBehaviour
         transform.Translate(Vector3.forward * Time.deltaTime * speed);
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Valla"))
+        {
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            audioSource.PlayOneShot(bonk);
+            Destroy(gameObject);
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -37,9 +51,9 @@ public class Bullet_Movement : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(other.CompareTag("Valla"))
+        if (other.CompareTag("Valla"))
         {
-            Destroy(gameObject); 
+            Destroy(gameObject);
         }
     }
 }

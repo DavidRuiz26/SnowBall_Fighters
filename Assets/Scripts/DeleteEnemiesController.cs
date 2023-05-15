@@ -7,13 +7,11 @@ public class DeleteEnemiesController : MonoBehaviour
 {
     private GameObject score;
     private GameObject spawnZone;
-    private GameObject wave;
 
     void Start()
     {
         score = GameObject.FindGameObjectWithTag("Score");
         spawnZone = GameObject.FindGameObjectWithTag("SpawnZone");
-        wave = GameObject.FindGameObjectWithTag("Wave");
     }
 
     void OnCollisionEnter(Collision collision)

@@ -10,7 +10,7 @@ public class AimRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var target = GameObject.FindGameObjectWithTag("Player");
+        var target = GameObject.FindGameObjectWithTag("Head");
 
         Vector3 targetOrientation = target.transform.position - transform.position;
         Debug.DrawRay(transform.position, targetOrientation, Color.red);
