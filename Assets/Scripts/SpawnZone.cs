@@ -6,23 +6,47 @@ public class SpawnZone : MonoBehaviour
 {
     public GameObject SnowMan; // Prefab del enemigo que deseas spawnear
     public float spawnInterval = 1.0f; // Intervalo de tiempo entre cada spawn
-    public int maxEnemies = 10; // Número máximo de enemigos que pueden aparecer en la zona
+    public int maxEnemies = 7; // Número máximo de enemigos que pueden aparecer en la zona
+    public int minEnemies = 5;
     public float space = 7.0f;
-
+    private int wave = 1;
     private int currentEnemyCount = 0; // Contador de enemigos actuales
 
-    private void Start()
+    private int enemyCount = 0;
+    public void Start()
     {
         // Inicia el proceso de spawn de enemigos
         InvokeRepeating("SpawnEnemy", 0.0f, spawnInterval);
+        enemyCount = Random.Range(minEnemies, maxEnemies) + wave * 2;
+    }
+    public int CheckNumberOfEnemies()
+    {
+        return currentEnemyCount;
+    }
+
+    public void DecreaseNumberOfEnemies()
+    {
+        currentEnemyCount--;
+    }
+
+    public void GenerateNewWave()
+    {
+        wave++;
+        enemyCount = Random.Range(minEnemies, maxEnemies) + wave * 2;
+        InvokeRepeating("SpawnEnemy", 0.0f, spawnInterval);
+    }
+
+    public int CheckWave()
+    {
+        return wave;
     }
 
     private void SpawnEnemy()
     {
-        if (currentEnemyCount >= maxEnemies)
+        if (currentEnemyCount >= enemyCount)
         {
             // Ya se alcanzó el límite de enemigos, no se hace spawn adicional
-            return;
+            CancelInvoke("SpawnEnemy");
         }
 
         // Instancia el prefab del enemigo en una posición aleatoria dentro de la zona de spawn

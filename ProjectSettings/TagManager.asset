@@ -10,6 +10,8 @@ TagManager:
   - Hand
   - Ball
   - Score
+  - BolaMalosa
+  - SpawnZone
   layers:
   - Default
   - TransparentFX
