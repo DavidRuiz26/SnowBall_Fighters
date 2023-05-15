@@ -9,10 +9,6 @@ namespace Valve.VR.InteractionSystem.Sample
     {
         public Collider targetCollider;
 
-        public Collider floorCollider;
-
-        public Collider enemiesCollider;
-
         public GameObject spawnObjectOnCollision;
 
         public bool colorSpawnedObject = true;
@@ -21,7 +17,7 @@ namespace Valve.VR.InteractionSystem.Sample
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.collider == targetCollider || collision.collider == floorCollider)
+            if (collision.collider == targetCollider)
             {
                 Efectos(collision);
 
@@ -32,19 +28,6 @@ namespace Valve.VR.InteractionSystem.Sample
                     Destroy(this.gameObject);
                 }
 
-            }
-            else if (collision.collider == enemiesCollider)
-            {
-                Efectos(collision);
-
-                if (destroyOnTargetCollision)
-                {
-                    var newBall = GameObject.Instantiate(gameObject);
-                    newBall.transform.position = new Vector3(1, 1, 1);
-                    Destroy(this.gameObject);
-                    //TODO: Añadir el gameOBject del enemigo
-                    //Destroy(enemyGameObject); 
-                }
             }
         }
         public void Efectos(Collision collision)
