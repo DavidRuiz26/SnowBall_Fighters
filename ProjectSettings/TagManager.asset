@@ -12,6 +12,7 @@ TagManager:
   - Score
   - BolaMalosa
   - SpawnZone
+  - Valla
   layers:
   - Default
   - TransparentFX

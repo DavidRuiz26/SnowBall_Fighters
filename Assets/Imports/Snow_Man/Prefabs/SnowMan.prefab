@@ -261,7 +261,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a5156689f0dc6f48a615bde64ef55ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 107946, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
 --- !u!114 &-8979007632036659933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,7 +275,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 7218715470093280658, guid: 5832e831d161d324cbde9ab98920d4c7, type: 3}
   timer: 3
-  maxCounter: 20
+  maxCounter: 2000
 --- !u!1 &4061901886764215230
 GameObject:
   m_ObjectHideFlags: 0
