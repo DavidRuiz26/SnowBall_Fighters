@@ -7,6 +7,11 @@ public class Bullet_Movement : MonoBehaviour
     [SerializeField]
     private float speed = 2f;
 
+    private AudioSource audioSource;
+
+    [SerializeField]
+    private AudioClip bonk;
+
     [SerializeField]
     private float timeLife = 5f;
 
@@ -15,6 +20,7 @@ public class Bullet_Movement : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, timeLife);
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -25,8 +31,13 @@ public class Bullet_Movement : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.CompareTag("Player"))
+        {
+            audioSource.PlayOneShot(bonk);
+            Destroy(gameObject);
+        }
 
-        if(other.tag == "Valla")
+        if(other.CompareTag("Valla"))
         {
             Destroy(gameObject); 
         }
