@@ -1,15 +1,14 @@
 using UnityEngine;
-
+using UnityEngine.UI;
 public class ScoreController : MonoBehaviour
 {
     // Start is called before the first frame update
     private int score;
-    TextMesh tm;
+    private Text tm;
 
     void Start()
     {
-        tm = gameObject.GetComponent(typeof(TextMesh)) as TextMesh;
-        score = 0;
+        tm = gameObject.GetComponent(typeof(Text)) as Text;
         tm.text = $"Score: {score}";
     }
 

@@ -7,10 +7,13 @@ public class DeleteEnemiesController : MonoBehaviour
 {
     private GameObject score;
     private GameObject spawnZone;
+    private GameObject wave;
+
     void Start()
     {
         score = GameObject.FindGameObjectWithTag("Score");
         spawnZone = GameObject.FindGameObjectWithTag("SpawnZone");
+        wave = GameObject.FindGameObjectWithTag("Wave");
     }
 
     void OnCollisionEnter(Collision collision)
@@ -19,10 +22,12 @@ public class DeleteEnemiesController : MonoBehaviour
         {
             score.GetComponent<ScoreController>().UpdateScore();
             spawnZone.GetComponent<SpawnZone>().DecreaseNumberOfEnemies();
+            var numberOfEnemies = spawnZone.GetComponent<SpawnZone>().CheckNumberOfEnemies();
+
             Destroy(gameObject);
             Destroy(collision.gameObject);
 
-            if (spawnZone.GetComponent<SpawnZone>().CheckNumberOfEnemies() == 0)
+            if (numberOfEnemies == 0)
             {
                 spawnZone.GetComponent<SpawnZone>().GenerateNewWave();
             }
