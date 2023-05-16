@@ -14,6 +14,7 @@ public class Bullet_Movement : MonoBehaviour
 
     [SerializeField]
     private float timeLife = 5f;
+    private float timedead = 0.1f;
 
 
     // Start is called before the first frame update
@@ -48,7 +49,7 @@ public class Bullet_Movement : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             audioSource.PlayOneShot(bonk);
-            Destroy(gameObject);
+            Destroy(gameObject,timedead);
         }
 
         if (other.CompareTag("Valla"))
