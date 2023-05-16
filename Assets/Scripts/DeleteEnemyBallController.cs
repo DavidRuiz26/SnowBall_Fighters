@@ -8,6 +8,11 @@ public class DeleteEnemyBallController : MonoBehaviour
 {
     private GameObject player;
 
+    private AudioSource audioSource;
+
+    [SerializeField]
+    private AudioClip bonk;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -23,6 +28,7 @@ public class DeleteEnemyBallController : MonoBehaviour
         {
             Destroy(gameObject);
             player.GetComponent<HPSystem>().PerderVida();
+            audioSource.PlayOneShot(bonk);
         }
         if (collision.gameObject.CompareTag("Enemy"))
         {

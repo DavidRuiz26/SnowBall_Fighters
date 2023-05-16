@@ -160,9 +160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2032817043e114249af20b0529d66ff0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  bonk: {fileID: 8300000, guid: 5fe3a086230bc224493a1d34f135c95f, type: 3}
-  timeLife: 50
+  maxSpeed: 12
+  minSpeed: 6
+  timeLife: 30
 --- !u!114 &6197233659328787837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,4 +175,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91181963c982da445aa68354f8a90cf4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  bonk: {fileID: 8300000, guid: 5fe3a086230bc224493a1d34f135c95f, type: 3}
