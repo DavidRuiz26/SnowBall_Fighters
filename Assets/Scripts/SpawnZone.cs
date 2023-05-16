@@ -137,7 +137,7 @@ public class SpawnZone : MonoBehaviour
         int maxAttempts = 15;
         for (int i = 0; i < maxAttempts; i++)
         {
-            Vector3 randomSpawnPos = zoneCenter + new Vector3(Random.Range(-zoneExtents.x, zoneExtents.x), 3.5f, Random.Range(-zoneExtents.z, zoneExtents.z));
+            Vector3 randomSpawnPos = zoneCenter + new Vector3(Random.Range(-zoneExtents.x, zoneExtents.x), 2f, Random.Range(-zoneExtents.z, zoneExtents.z));
 
             Collider[] colliders = Physics.OverlapSphere(randomSpawnPos, 1.5f); // Ajusta el radio según el tamaño de los enemigos y la zona de spawn
 
