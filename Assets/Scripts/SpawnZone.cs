@@ -4,7 +4,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class SpawnZone : MonoBehaviour
 {
     public GameObject SnowMan; // Prefab del enemigo que deseas spawnear
@@ -22,7 +21,6 @@ public class SpawnZone : MonoBehaviour
     {
         // Inicia el proceso de spawn de enemigos
         enemyCount = Random.Range(minEnemies, maxEnemies) + wave * 2;
-        enemiesLeft.GetComponent<EnemiesLeftController>().UpdateText(enemyCount);
         InvokeRepeating("SpawnEnemy", 0.0f, spawnInterval);
 
     }
@@ -34,15 +32,14 @@ public class SpawnZone : MonoBehaviour
     public void DecreaseNumberOfEnemies()
     {
         currentEnemyCount--;
-        enemiesLeft.GetComponent<EnemiesLeftController>().UpdateText(currentEnemyCount);
+        enemiesLeft.GetComponent<EnemiesLeftController>().UpdateText();
     }
 
     public void GenerateNewWave()
     {
         wave++;
-        waveGameObject.GetComponent<WaveController>().UpdateText(wave);
+        waveGameObject.GetComponent<WaveController>().UpdateText();
         enemyCount = Random.Range(minEnemies, maxEnemies) + wave * 2;
-        enemiesLeft.GetComponent<EnemiesLeftController>().UpdateText(currentEnemyCount);
         InvokeRepeating("SpawnEnemy", 0.0f, spawnInterval);
     }
 
@@ -56,6 +53,7 @@ public class SpawnZone : MonoBehaviour
         if (currentEnemyCount >= enemyCount)
         {
             // Ya se alcanzó el límite de enemigos, no se hace spawn adicional
+            enemiesLeft.GetComponent<EnemiesLeftController>().UpdateText();
             CancelInvoke("SpawnEnemy");
         }
 

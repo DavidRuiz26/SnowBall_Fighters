@@ -3,6 +3,8 @@ using UnityEngine.UI;
 public class EnemiesLeftController : MonoBehaviour
 {
     private Text tm;
+    public GameObject spawnZone;
+    private int enemiesLeft;
 
     void Start()
     {
@@ -10,8 +12,9 @@ public class EnemiesLeftController : MonoBehaviour
         tm.text = $"Enemies Left";
     }
 
-    public void UpdateText(int enemiesLeft)
+    public void UpdateText()
     {
+        enemiesLeft = spawnZone.GetComponent<SpawnZone>().CheckNumberOfEnemies();
         tm.text = $"Enemies Left: {enemiesLeft}";
     }
 }
