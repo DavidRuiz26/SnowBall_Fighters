@@ -10,6 +10,13 @@ TagManager:
   - Hand
   - Ball
   - Score
+  - BolaMalosa
+  - SpawnZone
+  - Valla
+  - Wave
+  - Enemies
+  - Barrera
+  - Head
   layers:
   - Default
   - TransparentFX

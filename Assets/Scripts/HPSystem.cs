@@ -1,8 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class HPSystem : MonoBehaviour
 {
@@ -13,25 +13,12 @@ public class HPSystem : MonoBehaviour
 
     private void Start()
     {
-        corazon1 = GameObject.Find("Hearth1");
-        corazon2 = GameObject.Find("Hearth2");
-        corazon3 = GameObject.Find("Hearth3");
-
         corazon1.SetActive(true);
         corazon2.SetActive(true);
         corazon3.SetActive(true);
-
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("BolaMalosa"))
-        {
-            perderVida();
-        }
-    }
-
-    private void perderVida()
+    public void PerderVida()
     {
         vidas--;
 
@@ -39,19 +26,24 @@ public class HPSystem : MonoBehaviour
         if (vidas == 2)
         {
             corazon3.SetActive(false);
+            Debug.Log("Te quedan dos vidas");
+
         }
         else if (vidas == 1)
         {
             corazon2.SetActive(false);
+            Debug.Log("Te queda una vida");
+
         }
         else if (vidas == 0)
         {
             corazon1.SetActive(false);
-            perderJuego();
+            Debug.Log("HAS PERDIDO");
+            PerderJuego();
         }
     }
 
-    private void perderJuego()
+    private void PerderJuego()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

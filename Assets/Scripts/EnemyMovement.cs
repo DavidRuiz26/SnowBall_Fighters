@@ -24,14 +24,15 @@ public class EnemyMovement : MonoBehaviour
     {
         // Calcula la nueva posición del objeto
         Vector3 newPosition = startPosition + new Vector3(Mathf.Sin(Time.time * speed), 0, 0) * distance;
+        transform.position = newPosition;
 
-        if(newPosition == finishPosition){
+        if (transform.position == finishPosition){
             targetRotation = Quaternion.Euler(0, 180, 0); // Gira 180 grados en el eje Y
             transform.rotation = targetRotation; // Aplica la rotación al objeto
         }
 
         // Asigna la nueva posición al objeto
-        transform.position = newPosition;
+        //transform.position = newPosition;
     }
 
 }
