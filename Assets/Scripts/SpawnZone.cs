@@ -12,16 +12,18 @@ public class SpawnZone : MonoBehaviour
     public GameObject Boss; 
     public GameObject waveGameObject;
     public float spawnInterval = 1.0f; // Intervalo de tiempo entre cada spawn
-    public int maxEnemies = 7; // Número máximo de enemigos que pueden aparecer en la zona
+    public int maxEnemies = 7; // Nï¿½mero mï¿½ximo de enemigos que pueden aparecer en la zona
     public int minEnemies = 5;
     public float space = 7.0f;
     private int wave = 1;
     private int currentEnemyCount = 0; // Contador de enemigos actuales
     private int enemyCount = 0;
     private int SnowManCount = 0; 
+    public bool isActivated = false;
 
-    public void Start()
-    {
+    public void Activate(){
+        isActivated = true;
+
         // Inicia el proceso de spawn de enemigos
         enemyCount = Random.Range(minEnemies, maxEnemies) + wave * 2;
         InvokeRepeating("SpawnEnemy", 0.0f, spawnInterval);
@@ -51,17 +53,17 @@ public class SpawnZone : MonoBehaviour
         return wave;
     }
 
-    private void SpawnEnemy()
+    public void SpawnEnemy()
     {
-        if (currentEnemyCount >= enemyCount)
+        if (!isActivated || currentEnemyCount >= maxEnemies)
         {
-            // Ya se alcanzó el límite de enemigos, no se hace spawn adicional
+            // Ya se alcanzï¿½ el lï¿½mite de enemigos, no se hace spawn adicional
             enemiesLeft.GetComponent<EnemiesLeftController>().UpdateText();
             CancelInvoke("SpawnEnemy");
             SnowManCount = 0;
         }
 
-        // Instancia el prefab del enemigo en una posición aleatoria dentro de la zona de spawn
+        // Instancia el prefab del enemigo en una posiciï¿½n aleatoria dentro de la zona de spawn
         Vector3 spawnPosition = GetRandomSpawnPosition();
         
         switch (wave)
@@ -127,19 +129,19 @@ public class SpawnZone : MonoBehaviour
         
     }
 
-    private Vector3 GetRandomSpawnPosition()
+    public Vector3 GetRandomSpawnPosition()
     {
-        // Obtiene una posición aleatoria dentro de la zona de spawn
+        // Obtiene una posiciï¿½n aleatoria dentro de la zona de spawn
         Vector3 zoneCenter = transform.position;
         Vector3 zoneExtents = transform.localScale * space;
 
-        // Intenta encontrar una posición aleatoria sin colisiones con otros enemigos
+        // Intenta encontrar una posiciï¿½n aleatoria sin colisiones con otros enemigos
         int maxAttempts = 15;
         for (int i = 0; i < maxAttempts; i++)
         {
             Vector3 randomSpawnPos = zoneCenter + new Vector3(Random.Range(-zoneExtents.x, zoneExtents.x), 2f, Random.Range(-zoneExtents.z, zoneExtents.z));
 
-            Collider[] colliders = Physics.OverlapSphere(randomSpawnPos, 1.5f); // Ajusta el radio según el tamaño de los enemigos y la zona de spawn
+            Collider[] colliders = Physics.OverlapSphere(randomSpawnPos, 1.5f); // Ajusta el radio segï¿½n el tamaï¿½o de los enemigos y la zona de spawn
 
             if (colliders.Length == 0)
             {
@@ -147,7 +149,7 @@ public class SpawnZone : MonoBehaviour
             }
         }
 
-        // Si no se encuentra una posición sin colisiones después de ciertos intentos, se devuelve la posición aleatoria original
+        // Si no se encuentra una posiciï¿½n sin colisiones despuï¿½s de ciertos intentos, se devuelve la posiciï¿½n aleatoria original
         return zoneCenter + new Vector3(Random.Range(-zoneExtents.x, zoneExtents.x), 0.0f, Random.Range(-zoneExtents.z, zoneExtents.z));
     }
 }

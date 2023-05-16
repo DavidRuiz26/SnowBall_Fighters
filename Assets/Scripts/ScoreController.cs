@@ -3,13 +3,13 @@ using UnityEngine.UI;
 public class ScoreController : MonoBehaviour
 {
     // Start is called before the first frame update
-    private int score;
+    private int score = 0;
     private Text tm;
 
     void Start()
     {
         tm = gameObject.GetComponent(typeof(Text)) as Text;
-        tm.text = $"Score: {score}";
+        tm.text = $"Score";
     }
 
     public void UpdateScore()

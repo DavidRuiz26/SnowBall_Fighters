@@ -4,12 +4,12 @@ public class WaveController : MonoBehaviour
 {
     private Text tm;
     public GameObject spawnZone;
-    private int wave;
+    private int wave = 1;
 
     void Start()
     {
         tm = gameObject.GetComponent(typeof(Text)) as Text;
-        tm.text = $"Wave: {1}";
+        tm.text = $"Wave: {wave}";
     }
 
     public void UpdateText()
