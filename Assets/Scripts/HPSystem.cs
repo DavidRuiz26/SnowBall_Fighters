@@ -10,9 +10,11 @@ public class HPSystem : MonoBehaviour
     public GameObject corazon1;
     public GameObject corazon2;
     public GameObject corazon3;
+    private GameObject player;
 
     private void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         corazon1.SetActive(true);
         corazon2.SetActive(true);
         corazon3.SetActive(true);
@@ -45,6 +47,7 @@ public class HPSystem : MonoBehaviour
 
     private void PerderJuego()
     {
+        player.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

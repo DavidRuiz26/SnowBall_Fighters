@@ -9,7 +9,7 @@ public class SpawnZone : MonoBehaviour
     public GameObject SnowMan; // Prefab del enemigo que deseas spawnear
     public GameObject enemiesLeft;
     public GameObject Diana;
-    public GameObject Boss; 
+    public GameObject Boss;
     public GameObject waveGameObject;
     public float spawnInterval = 1.0f; // Intervalo de tiempo entre cada spawn
     public int maxEnemies = 7; // N�mero m�ximo de enemigos que pueden aparecer en la zona
@@ -18,10 +18,11 @@ public class SpawnZone : MonoBehaviour
     private int wave = 1;
     private int currentEnemyCount = 0; // Contador de enemigos actuales
     private int enemyCount = 0;
-    private int SnowManCount = 0; 
+    private int SnowManCount = 0;
     public bool isActivated = false;
 
-    public void Activate(){
+    public void Activate()
+    {
         isActivated = true;
 
         // Inicia el proceso de spawn de enemigos
@@ -44,7 +45,14 @@ public class SpawnZone : MonoBehaviour
     {
         wave++;
         waveGameObject.GetComponent<WaveController>().UpdateText();
-        enemyCount = Random.Range(minEnemies, maxEnemies) + wave * 2;
+        if (wave >= 5)
+        {
+            enemyCount = 1;
+        }
+        else
+        {
+            enemyCount = Random.Range(minEnemies, maxEnemies) + wave * 2;
+        }
         InvokeRepeating("SpawnEnemy", 0.0f, spawnInterval);
     }
 
@@ -55,7 +63,7 @@ public class SpawnZone : MonoBehaviour
 
     public void SpawnEnemy()
     {
-        if (!isActivated || currentEnemyCount >= maxEnemies)
+        if (!isActivated || currentEnemyCount >= enemyCount)
         {
             // Ya se alcanz� el l�mite de enemigos, no se hace spawn adicional
             enemiesLeft.GetComponent<EnemiesLeftController>().UpdateText();
@@ -65,14 +73,12 @@ public class SpawnZone : MonoBehaviour
 
         // Instancia el prefab del enemigo en una posici�n aleatoria dentro de la zona de spawn
         Vector3 spawnPosition = GetRandomSpawnPosition();
-        
+
         switch (wave)
         {
             case 1:
-                
                 Instantiate(Diana, spawnPosition, Quaternion.identity);
                 currentEnemyCount++;
-
                 break;
 
             case 2:
@@ -118,15 +124,10 @@ public class SpawnZone : MonoBehaviour
                 break;
 
             default:
-
                 Instantiate(Boss, spawnPosition, Quaternion.identity);
                 currentEnemyCount++;
-
                 break;
         }
-
-
-        
     }
 
     public Vector3 GetRandomSpawnPosition()
