@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class StartMenuManager : MonoBehaviour
+public class FollowCamera : MonoBehaviour
 {
     public Transform head;
     public GameObject menu;
