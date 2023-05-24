@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1508620547653242595}
   m_Layer: 0
   m_Name: SM_Pine_02_LOD1
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3330551149637848025}
   - component: {fileID: 455243324344169651}
-  - component: {fileID: 8897979307593544371}
+  - component: {fileID: 689192561592877058}
   m_Layer: 0
   m_Name: Pine_02
   m_TagString: Obstaculo
@@ -156,7 +156,7 @@ LODGroup:
     renderers:
     - renderer: {fileID: 9047217996854134354}
   m_Enabled: 1
---- !u!114 &8897979307593544371
+--- !u!114 &689192561592877058
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2698692137920139619}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60cb597121a0e5e4db275ba57b8ca1c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 26cb294623d1f7b408ce03537efa122e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &3443078009315109496
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 3131143833362833761}
   m_Layer: 0
   m_Name: SM_Pine_02_LOD0
-  m_TagString: Untagged
+  m_TagString: Obstaculo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

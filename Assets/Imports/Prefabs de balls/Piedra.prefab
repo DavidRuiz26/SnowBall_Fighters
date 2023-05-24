@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 114000013822852628}
   - component: {fileID: 114000011129258500}
   - component: {fileID: 114000012554025852}
+  - component: {fileID: -1792975878665890235}
   m_Layer: 0
   m_Name: Piedra
   m_TagString: Piedra
@@ -309,7 +310,7 @@ MonoBehaviour:
         m_MethodName: set_material
         m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 2100000, guid: 7e90f10e44a186a49a00679d068515ed,
+          m_ObjectArgument: {fileID: 2100000, guid: c4f5b5fe4dd970a418b1187690e3d631,
             type: 2}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Material, UnityEngine
           m_IntArgument: 0
@@ -369,3 +370,15 @@ MonoBehaviour:
   previewPoseSelection: 0
   blendingBehaviours: []
   scale: 1
+--- !u!114 &-1792975878665890235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012660339372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d4869d0d2d66fa4294b5a1d08174195, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
