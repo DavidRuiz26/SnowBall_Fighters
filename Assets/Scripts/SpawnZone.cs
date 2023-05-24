@@ -16,6 +16,9 @@ public class SpawnZone : MonoBehaviour
     public int minEnemies = 5;
     public float space = 7.0f;
     private int wave = 1;
+    private float prob_target = 0f;
+    private float prob_Snow = 0f;
+    private float prob_PowerUp = 0.05f; 
     private int currentEnemyCount = 0; // Contador de enemigos actuales
     private int enemyCount = 0;
     private int SnowManCount = 0;
@@ -45,7 +48,7 @@ public class SpawnZone : MonoBehaviour
     {
         wave++;
         waveGameObject.GetComponent<WaveController>().UpdateText();
-        if (wave >= 5)
+        if (wave == 5 || wave ==10)
         {
             enemyCount = 1;
         }
@@ -77,56 +80,138 @@ public class SpawnZone : MonoBehaviour
         switch (wave)
         {
             case 1:
-                Instantiate(Diana, spawnPosition, Quaternion.identity);
-                currentEnemyCount++;
-                break;
-
-            case 2:
-                if (SnowManCount == 0)
+                prob_target = 0.8f;
+                prob_Snow = 0.2f;
+                if (Random.Range(0f,1f) < prob_target)
                 {
-                    Instantiate(SnowMan, spawnPosition, Quaternion.identity);
-                    SnowManCount++;
+                    Instantiate(Diana, spawnPosition, Quaternion.identity);
                     currentEnemyCount++;
                 }
                 else
                 {
+                    Instantiate(SnowMan, spawnPosition, Quaternion.identity);
+                    currentEnemyCount++;
+                }
+                break;
+
+            case 2:
+                prob_target = 0.3f;
+                prob_Snow = 0.7f;
+                if (Random.Range(0f, 1f) < prob_target)
+                {
                     Instantiate(Diana, spawnPosition, Quaternion.identity);
+                    currentEnemyCount++;
+                }
+                else if (Random.Range(0f, 1f) < prob_Snow)
+                {
+                    Instantiate(SnowMan, spawnPosition, Quaternion.identity);
                     currentEnemyCount++;
                 }
                 break;
 
             case 3:
-                if (SnowManCount < 2)
-                {
-                    Instantiate(SnowMan, spawnPosition, Quaternion.identity);
-                    currentEnemyCount++;
-                    SnowManCount++;
-                }
-                else
+                prob_target = 0.5f;
+                prob_Snow = 0.5f;
+                if (Random.Range(0f, 1f) < prob_target)
                 {
                     Instantiate(Diana, spawnPosition, Quaternion.identity);
+                    currentEnemyCount++;
+                }
+                else if (Random.Range(0f, 1f) < prob_Snow)
+                {
+                    Instantiate(SnowMan, spawnPosition, Quaternion.identity);
                     currentEnemyCount++;
                 }
                 break;
 
             case 4:
-                if (SnowManCount < 4)
-                {
-                    Instantiate(SnowMan, spawnPosition, Quaternion.identity);
-                    currentEnemyCount++;
-                    SnowManCount++;
-                }
-                else
+                prob_target = 0.3f;
+                prob_Snow = 0.7f;
+                if (Random.Range(0f, 1f) < prob_target)
                 {
                     Instantiate(Diana, spawnPosition, Quaternion.identity);
                     currentEnemyCount++;
                 }
+                else if (Random.Range(0f, 1f) < prob_Snow)
+                {
+                    Instantiate(SnowMan, spawnPosition, Quaternion.identity);
+                    currentEnemyCount++;
+                }
                 break;
 
-            default:
+            case 5: 
                 Instantiate(Boss, spawnPosition, Quaternion.identity);
                 currentEnemyCount++;
                 break;
+
+            case 6:
+                prob_target = 0.3f;
+                prob_Snow = 0.7f;
+                if (Random.Range(0f, 1f) < prob_target)
+                {
+                    Instantiate(Diana, spawnPosition, Quaternion.identity);
+                    currentEnemyCount++;
+                }
+                else if (Random.Range(0f, 1f) < prob_Snow)
+                {
+                    Instantiate(SnowMan, spawnPosition, Quaternion.identity);
+                    currentEnemyCount++;
+                }
+                break;
+
+            case 7:
+                prob_target = 0.2f;
+                prob_Snow = 0.8f;
+                if (Random.Range(0f, 1f) < prob_target)
+                {
+                    Instantiate(Diana, spawnPosition, Quaternion.identity);
+                    currentEnemyCount++;
+                }
+                else if (Random.Range(0f, 1f) < prob_Snow)
+                {
+                    Instantiate(SnowMan, spawnPosition, Quaternion.identity);
+                    currentEnemyCount++;
+                }
+                break;
+
+            case 8:
+                prob_target = 0.2f;
+                prob_Snow = 0.8f;
+                if (Random.Range(0f, 1f) < prob_target)
+                {
+                    Instantiate(Diana, spawnPosition, Quaternion.identity);
+                    currentEnemyCount++;
+                }
+                else if (Random.Range(0f, 1f) < prob_Snow)
+                {
+                    Instantiate(SnowMan, spawnPosition, Quaternion.identity);
+                    currentEnemyCount++;
+                }
+                break;
+
+            case 9: 
+                prob_target = 0.1f;
+                prob_Snow = 0.9f;
+                if (Random.Range(0f, 1f) < prob_target)
+                {
+                    Instantiate(Diana, spawnPosition, Quaternion.identity);
+                    currentEnemyCount++;
+                }
+                else if (Random.Range(0f, 1f) < prob_Snow)
+                {
+                    Instantiate(SnowMan, spawnPosition, Quaternion.identity);
+                    currentEnemyCount++;
+                }
+                break;
+
+            case 10:
+                Instantiate(Boss, spawnPosition, Quaternion.identity);
+                currentEnemyCount++;
+                break;
+
+            default:
+                CancelInvoke("SpawnEnemy");
+                return; 
         }
     }
 
