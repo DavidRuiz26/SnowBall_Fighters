@@ -24,7 +24,7 @@ public class DeleteEnemyBallController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Head"))
         {
             Destroy(gameObject);
             player.GetComponent<HPSystem>().PerderVida();

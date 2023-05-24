@@ -15,6 +15,7 @@ public class StartGameUI : UIElement
     protected override void OnButtonClick()
     {
         base.OnButtonClick();
+        gameObject.SetActive(false);
         spawnZone.GetComponent<SpawnZone>().Activate();
     }
 }
