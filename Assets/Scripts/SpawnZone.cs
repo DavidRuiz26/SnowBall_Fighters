@@ -205,6 +205,7 @@ public class SpawnZone : MonoBehaviour
                 break;
 
             case 10:
+
                 Instantiate(Boss, spawnPosition, Quaternion.identity);
                 currentEnemyCount++;
                 break;
