@@ -75,7 +75,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c4f5b5fe4dd970a418b1187690e3d631, type: 2}
+  - {fileID: 2100000, guid: 943fd52b029cc644a975474408af416e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,8 +114,8 @@ GameObject:
   - component: {fileID: 114000011129258500}
   - component: {fileID: 114000012554025852}
   m_Layer: 0
-  m_Name: Piedra
-  m_TagString: Piedra
+  m_Name: Bola_Grande
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,7 +129,7 @@ Transform:
   m_GameObject: {fileID: 1000012660339372}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.035, y: 1.05, z: -0.139}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4000012197494970}
