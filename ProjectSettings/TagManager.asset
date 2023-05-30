@@ -4,21 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - projectile
-  - FxTemporaire
-  - Hand
-  - Ball
-  - Score
-  - BolaMalosa
-  - SpawnZone
-  - Valla
-  - Wave
-  - Enemies
-  - Barrera
-  - Head
-  - Piedra
-  - Obstaculo
+  - Rojo
+  - Verde
+  - Negro
   layers:
   - Default
   - TransparentFX
@@ -28,9 +16,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Character
+  - Interactable
+  - Post Processing
   - 
   - 
   - 
