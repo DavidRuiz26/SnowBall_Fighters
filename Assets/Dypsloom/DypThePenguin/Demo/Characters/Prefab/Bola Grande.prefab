@@ -1720,19 +1720,6 @@ MonoBehaviour:
   m_InvincibilityTime: 0
   m_DisableOnDeath: 0
   m_Character: {fileID: 406441392843560932}
---- !u!114 &3981216176676791548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3911862475426650774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ae4caeb757a243428b6bbd1725c9f49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bola: {fileID: 1000012660339372, guid: e0286f751832c7a48bc659a46f050e75, type: 3}
 --- !u!114 &4886406336446666642
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1763,6 +1750,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Character: {fileID: 406441392843560932}
   m_InteractableIndicator: {fileID: 7123956316609484898}
+--- !u!114 &519054175403052171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3911862475426650774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de46c782c135755488226889481b84b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bola: {fileID: 1000012660339372, guid: e0286f751832c7a48bc659a46f050e75, type: 3}
 --- !u!95 &7969366017136526847 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 72fcee3806ee8cd4fad48dcd98afb351,

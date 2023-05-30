@@ -11,6 +11,9 @@ public class SpawnZone : MonoBehaviour
     public GameObject Diana;
     public GameObject Boss;
     public GameObject waveGameObject;
+    public GameObject vida;
+    public GameObject grande;
+    public GameObject piedra; 
     public float spawnInterval = 1.0f; // Intervalo de tiempo entre cada spawn
     public int maxEnemies = 7; // N�mero m�ximo de enemigos que pueden aparecer en la zona
     public int minEnemies = 5;
@@ -76,6 +79,24 @@ public class SpawnZone : MonoBehaviour
 
         // Instancia el prefab del enemigo en una posici�n aleatoria dentro de la zona de spawn
         Vector3 spawnPosition = GetRandomSpawnPosition();
+        if (Random.Range(0f, 1f) < prob_PowerUp)
+        {
+            switch (Random.Range(0, 2))
+            {
+                case 1:
+                    Instantiate(vida, spawnPosition, Quaternion.identity);
+                    break;
+                case 2:
+                    Instantiate(grande, spawnPosition, Quaternion.identity);
+                    break;
+                case 3:
+                    Instantiate(piedra, spawnPosition, Quaternion.identity);
+                    break;
+                default:
+                    Debug.Log("no hay penwino");
+                    return;
+            }
+        }
 
         switch (wave)
         {

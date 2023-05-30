@@ -24,5 +24,11 @@ public class Curacion : MonoBehaviour
             player.GetComponent<HPSystem>().GanarVida();
             audioSource.PlayOneShot(bonk);
         }
+        if (collision.gameObject.CompareTag("BigBall"))
+        {
+            Destroy(gameObject);
+            player.GetComponent<HPSystem>().GanarVida();
+            audioSource.PlayOneShot(bonk);
+        }
     }
 }
