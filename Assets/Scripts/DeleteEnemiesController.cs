@@ -30,5 +30,19 @@ public class DeleteEnemiesController : MonoBehaviour
                 spawnZone.GetComponent<SpawnZone>().GenerateNewWave();
             }
         }
+        if (collision.gameObject.CompareTag("BigBall"))
+        {
+            score.GetComponent<ScoreController>().UpdateScore();
+            spawnZone.GetComponent<SpawnZone>().DecreaseNumberOfEnemies();
+            var numberOfEnemies = spawnZone.GetComponent<SpawnZone>().CheckNumberOfEnemies();
+
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+
+            if (numberOfEnemies == 0)
+            {
+                spawnZone.GetComponent<SpawnZone>().GenerateNewWave();
+            }
+        }
     }
 }
