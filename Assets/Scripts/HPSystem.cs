@@ -13,6 +13,7 @@ public class HPSystem : MonoBehaviour
 
     public AudioClip bonk;
     public AudioClip death;
+    public AudioClip curacion; 
 
     private GameObject player;
     private AudioSource audio;
@@ -20,7 +21,7 @@ public class HPSystem : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         audio = gameObject.GetComponent(typeof(AudioSource)) as AudioSource;
-        audio.clip = bonk;
+        audio.clip = bonk; 
         corazon1.SetActive(true);
         corazon2.SetActive(true);
         corazon3.SetActive(true);
@@ -28,6 +29,7 @@ public class HPSystem : MonoBehaviour
 
     public void PerderVida()
     {
+        audio.clip = bonk; 
         vidas--;
 
         // Desactiva el objeto de corazón correspondiente a la vida perdida
@@ -48,9 +50,31 @@ public class HPSystem : MonoBehaviour
         else if (vidas == 0)
         {
             audio.clip = death;
+            audio.Play(); 
             corazon1.SetActive(false);
             Debug.Log("HAS PERDIDO");
             PerderJuego();
+        }
+    }
+
+    public void GanarVida()
+    {
+        vidas++;
+        if (vidas == 2)
+        {
+            audio.clip = curacion;
+            audio.Play();
+            corazon3.SetActive(true);
+            Debug.Log("Te quedan tres vidas");
+
+        }
+        else if (vidas == 1)
+        {
+            audio.clip = curacion; 
+            audio.Play();
+            corazon2.SetActive(true);
+            Debug.Log("Te queda dos vidas");
+
         }
     }
 
