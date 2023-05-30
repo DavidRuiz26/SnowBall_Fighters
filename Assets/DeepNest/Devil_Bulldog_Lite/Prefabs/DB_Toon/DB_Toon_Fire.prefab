@@ -207,6 +207,7 @@ GameObject:
   - component: {fileID: 3697139277384170981}
   - component: {fileID: -9035068205864378550}
   - component: {fileID: 7693563318874675948}
+  - component: {fileID: -8596169759789012348}
   m_Layer: 0
   m_Name: DB_Toon_Fire
   m_TagString: Enemy
@@ -223,7 +224,7 @@ Transform:
   m_GameObject: {fileID: 434023797309887072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1961661195633055337}
@@ -340,8 +341,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1000012660339372, guid: 6287663ed3f46274abb1730fd3568d3e, type: 3}
-  timer: 2.5
+  timer: 3
   maxCounter: 20
+--- !u!54 &-8596169759789012348
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 434023797309887072}
+  serializedVersion: 2
+  m_Mass: 70
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &481104048275803874
 GameObject:
   m_ObjectHideFlags: 0

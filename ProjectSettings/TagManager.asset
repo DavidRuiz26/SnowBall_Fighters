@@ -17,6 +17,8 @@ TagManager:
   - Enemies
   - Barrera
   - Head
+  - Piedra
+  - Obstaculo
   layers:
   - Default
   - TransparentFX

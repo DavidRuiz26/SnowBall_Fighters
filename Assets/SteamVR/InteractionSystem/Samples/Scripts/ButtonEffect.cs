@@ -30,7 +30,10 @@ namespace Valve.VR.InteractionSystem.Sample
             if (balls.Length < maxBalls)
             {
                 var newBall = GameObject.Instantiate(ball);
-                newBall.transform.position = new Vector3(-1, 1, -1);
+                Debug.Log(gameObject.transform.position);
+                Debug.Log(gameObject.transform.name);
+                Debug.Log(gameObject.transform.position - gameObject.transform.localPosition);
+                newBall.transform.position = (gameObject.transform.position - gameObject.transform.localPosition) + new Vector3(-1, 1.25f, -1f);
             }
         }
 
