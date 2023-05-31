@@ -16,7 +16,7 @@ GameObject:
   m_Name: SM_Pine_02_LOD1
   m_TagString: Obstaculo
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &2843680405521274443
@@ -184,7 +184,7 @@ GameObject:
   m_Name: SM_Pine_02_LOD0
   m_TagString: Obstaculo
   m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
+  m_NavMeshLayer: 1
   m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &3583912909781296468

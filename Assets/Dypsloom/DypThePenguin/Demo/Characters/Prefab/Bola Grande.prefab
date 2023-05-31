@@ -1665,6 +1665,28 @@ CharacterController:
   m_SkinWidth: 0.13
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.25, z: 0}
+--- !u!195 &-5414210058017410994
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3911862475426650774}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!114 &406441392843560932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1688,6 +1710,33 @@ MonoBehaviour:
   m_PushPower: 1.5
   m_ProjectilesSpawnPoint: {fileID: 2837786122859384113}
   m_DeathEffects: {fileID: 7719667657945953669}
+--- !u!114 &519054175403052171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3911862475426650774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de46c782c135755488226889481b84b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bola: {fileID: 1000012660339372, guid: e0286f751832c7a48bc659a46f050e75, type: 3}
+--- !u!114 &1451945586032100797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3911862475426650774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e843b573c59ec24da1c66cdbda7dbe5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  navMeshAgent: {fileID: -5414210058017410994}
+  goal: {fileID: 1345700298954363909, guid: 6dd70b1c78cfa3248850f9b7e08648d5, type: 3}
 --- !u!114 &2342378794058303038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1750,19 +1799,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Character: {fileID: 406441392843560932}
   m_InteractableIndicator: {fileID: 7123956316609484898}
---- !u!114 &519054175403052171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3911862475426650774}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de46c782c135755488226889481b84b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bola: {fileID: 1000012660339372, guid: e0286f751832c7a48bc659a46f050e75, type: 3}
 --- !u!95 &7969366017136526847 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: -6057140222963153312, guid: 72fcee3806ee8cd4fad48dcd98afb351,

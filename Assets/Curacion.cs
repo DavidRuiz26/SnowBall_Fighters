@@ -7,6 +7,7 @@ public class Curacion : MonoBehaviour
     private GameObject player;
 
     private AudioSource audioSource;
+    private GameObject spawnZone;
 
     [SerializeField]
     private AudioClip bonk;
@@ -14,21 +15,28 @@ public class Curacion : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        spawnZone = GameObject.FindGameObjectWithTag("SpawnZone");
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Bola"))
+        if (collision.gameObject.CompareTag("Ball"))
         {
             Destroy(gameObject);
+            Destroy(collision.gameObject);
             player.GetComponent<HPSystem>().GanarVida();
             audioSource.PlayOneShot(bonk);
         }
         if (collision.gameObject.CompareTag("BigBall"))
         {
             Destroy(gameObject);
+            Destroy(collision.gameObject);
             player.GetComponent<HPSystem>().GanarVida();
             audioSource.PlayOneShot(bonk);
+        }
+        if (collision.gameObject.CompareTag("Goal"))
+        {
+            spawnZone.GetComponent<SpawnZone>().SpawnGoal();
         }
     }
 }

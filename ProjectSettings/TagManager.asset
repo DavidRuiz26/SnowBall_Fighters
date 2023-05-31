@@ -19,6 +19,10 @@ TagManager:
   - Head
   - Ball
   - BigBall
+  - Enemy
+  - projectile
+  - FxTemporaire
+  - Goal
   layers:
   - Default
   - TransparentFX

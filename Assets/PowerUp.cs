@@ -29,5 +29,9 @@ public class PowerUp : MonoBehaviour
             var target = GameObject.FindGameObjectWithTag("Head");
             Instantiate(bola, target.transform.position, Quaternion.identity);
         }
+        if (collision.gameObject.CompareTag("Goal"))
+        {
+            spawnZone.GetComponent<SpawnZone>().SpawnGoal();
+        }
     }
 }

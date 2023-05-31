@@ -13,7 +13,8 @@ public class SpawnZone : MonoBehaviour
     public GameObject waveGameObject;
     public GameObject vida;
     public GameObject grande;
-    public GameObject piedra; 
+    public GameObject piedra;
+    public GameObject goal; 
     public float spawnInterval = 1.0f; // Intervalo de tiempo entre cada spawn
     public int maxEnemies = 7; // N�mero m�ximo de enemigos que pueden aparecer en la zona
     public int minEnemies = 5;
@@ -30,7 +31,6 @@ public class SpawnZone : MonoBehaviour
     public void Activate()
     {
         isActivated = true;
-
         // Inicia el proceso de spawn de enemigos
         enemyCount = Random.Range(minEnemies, maxEnemies) + wave * 2;
         InvokeRepeating("SpawnEnemy", 0.0f, spawnInterval);
@@ -259,5 +259,11 @@ public class SpawnZone : MonoBehaviour
 
         // Si no se encuentra una posici�n sin colisiones despu�s de ciertos intentos, se devuelve la posici�n aleatoria original
         return zoneCenter + new Vector3(Random.Range(-zoneExtents.x, zoneExtents.x), 0.0f, Random.Range(-zoneExtents.z, zoneExtents.z));
+    }
+
+    public void SpawnGoal()
+    {
+        Vector3 spawnPosition = GetRandomSpawnPosition();
+        goal.transform.position = spawnPosition; 
     }
 }
