@@ -22,7 +22,7 @@ public class SpawnZone : MonoBehaviour
     private int wave = 1;
     private float prob_target = 0f;
     private float prob_Snow = 0f;
-    private float prob_PowerUp = 0.05f; 
+    private float prob_PowerUp = 0.1f; 
     private int currentEnemyCount = 0; // Contador de enemigos actuales
     private int enemyCount = 0;
     private int SnowManCount = 0;
@@ -81,7 +81,7 @@ public class SpawnZone : MonoBehaviour
         Vector3 spawnPosition = GetRandomSpawnPosition();
         if (Random.Range(0f, 1f) < prob_PowerUp)
         {
-            switch (Random.Range(0, 2))
+            switch (Random.Range(1, 3))
             {
                 case 1:
                     Instantiate(vida, spawnPosition, Quaternion.identity);

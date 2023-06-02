@@ -60,7 +60,7 @@ public class HPSystem : MonoBehaviour
     public void GanarVida()
     {
         vidas++;
-        if (vidas == 2)
+        if (vidas == 3)
         {
             audio.clip = curacion;
             audio.Play();
@@ -68,7 +68,7 @@ public class HPSystem : MonoBehaviour
             Debug.Log("Te quedan tres vidas");
 
         }
-        else if (vidas == 1)
+        else if (vidas == 2)
         {
             audio.clip = curacion; 
             audio.Play();
