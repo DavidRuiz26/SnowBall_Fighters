@@ -3,7 +3,26 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Rojo
+  - Verde
+  - Negro
+  - Piedra
+  - BolaMalosa
+  - Wave
+  - SpawnZone
+  - Valla
+  - Enemies
+  - Score
+  - Obstaculo
+  - Hand
+  - Head
+  - Ball
+  - BigBall
+  - Enemy
+  - projectile
+  - FxTemporaire
+  - Goal
   layers:
   - Default
   - TransparentFX
@@ -13,9 +32,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - Character
+  - Interactable
+  - Post Processing
   - 
   - 
   - 
